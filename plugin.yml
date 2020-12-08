@@ -1,0 +1,17 @@
+#Plugin made by MadeAja
+
+# A PocketMine-MP plugin that allows players to use tags
+# Copyright (C) 2020 MadeAja
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# he Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+name: NichiJoinLocation
+version: 1.0.0
+main: MadeAja\joinLocation\Main
+api: 3.0.0
+author: MadeAja
+website: "https://github.com/MadeAja/NichiJoinLocation"
+description: This plugin is a plugin that can display the player's city

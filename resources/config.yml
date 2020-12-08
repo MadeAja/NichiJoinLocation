@@ -1,0 +1,7 @@
+#plugin make by MadeAja
+
+#prefix join
+#replace {player} to show player name
+#replace {city} to show city name
+#colour use &
+prefix: "[{city}] {player} join in game"
