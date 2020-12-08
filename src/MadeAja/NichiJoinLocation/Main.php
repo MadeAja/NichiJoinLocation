@@ -12,20 +12,20 @@ class Main extends PluginBase implements Listener
     /** @var array */
     public $config;
 
+    /** @var self */
+    private static $instance;
+
     /** onEnable */
     public function onEnable()
     {
+        self::$instance = $this;
         $this->saveDefaultConfig();
         $this->config = $this->getConfig()->getAll();
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getLogger()->info("Plugin join location has been enable");
-
     }
 
-    /** onDisable */
-    public function onDisable()
-    {
-        $this->getLogger()->info("Plugin join location has been disable");
+    public static function getInstance() : self {
+        return self::$instance;
     }
 
     /** Event onJoin */
@@ -39,7 +39,7 @@ class Main extends PluginBase implements Listener
     /** displayBroadcast */
     public function displayBroadcast($city, $name)
     {
-        $message = str_replace(["{player}", "{city}"], [$name, $city], $this->config["prefix"]);
+        $message = str_replace(["{player}", "{city}", "&"], [$name, $city, "§"], $this->config["prefix"]);
         $this->getServer()->broadcastMessage($message);
     }
 }
