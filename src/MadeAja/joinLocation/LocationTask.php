@@ -29,7 +29,7 @@ class LocationTask extends AsyncTask
             $data["country"] = "server";
         }
         if (isset($data["country"])) {
-            $list[$this->playerName] = $data["country"] ?? "Unknown";
+            $list[$this->playerName] = ["region" => $data["country"] ?? "Unknown", "city" => $data['city']];
         }
         $this->setResult($list);
     }
@@ -37,7 +37,7 @@ class LocationTask extends AsyncTask
     public function onCompletion(Server $server)
     {
         $plugin = $server->getPluginManager()->getPlugin("NichiJoinLocation");
-        $plugin->displayBroadcast($this->getResult()[$this->playerName], $this->playerName);
-    }
+        $plugin->displayBroadcast($this->getResult()[$this->playerName]['region'], $this->getResult()[$this->playerName]['city'], $this->playerName);
+  }
 
 }
