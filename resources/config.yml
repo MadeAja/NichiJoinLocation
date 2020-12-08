@@ -3,5 +3,6 @@
 #prefix join
 #replace {player} to show player name
 #replace {city} to show city name
-#colour use &
+#replace {region} to show region name
+#colour use §
 prefix: "[{region} {city}] {player} join in game"
