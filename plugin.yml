@@ -10,7 +10,7 @@
 
 name: NichiJoinLocation
 version: 1.0.0
-main: MadeAja\joinLocation\Main
+main: MadeAja\NichiJoinLocation\Main
 api: 3.0.0
 author: MadeAja
 website: "https://github.com/MadeAja/NichiJoinLocation"
