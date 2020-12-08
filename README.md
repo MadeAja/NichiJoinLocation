@@ -1,11 +1,11 @@
-# NichiJoinLocation
+NichiJoinLocation
 
-#Features
+Features
  + Showing city and region player
  + No lagging
  
  
-#How to install
+How to install
  + Download this plugin
  + Paste plugin in this plugin folder in server
  + Restart server
@@ -19,12 +19,12 @@
  + Enjoy
  
  
- #Upcoming Features
+ Upcoming Features
  + Add new replace colour 
    - & 
    - {color_black} and more
  + Adding UI Join
  
- #Additional Notes
+ Additional Notes
  + If you found bugs or want to give suggestions, please visit here or DM MadeAja#8864 via Discord.
   
