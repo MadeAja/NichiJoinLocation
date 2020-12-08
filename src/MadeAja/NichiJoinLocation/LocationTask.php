@@ -9,10 +9,10 @@ use pocketmine\Server;
 class LocationTask extends AsyncTask
 {
 
-    /** @var array */
+    /** @var string */
     private $playerAddress;
 
-    /** @var array */
+    /** @var string */
     private $playerName;
 
     public function __construct($ip, $name)
