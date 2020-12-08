@@ -37,9 +37,10 @@ class Main extends PluginBase implements Listener
     }
 
     /** displayBroadcast */
-    public function displayBroadcast($city, $name)
+    public function displayBroadcast($region, $city, $name)
     {
-        $message = str_replace(["{player}", "{city}", "&"], [$name, $city, "§"], $this->config["prefix"]);
+        $message = str_replace(["{player}", "{region}", "{city}", "&"], [$name, $region, $city, "§"], $this->config["prefix"]);
         $this->getServer()->broadcastMessage($message);
     }
+
 }

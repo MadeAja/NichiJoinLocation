@@ -28,13 +28,13 @@ class LocationTask extends AsyncTask
         if ($data["message"] === "private range") {
             $data["country"] = "server";
         }
-        $list[$this->playerName] = $data["country"] ?? "Unknown";
+        $list[$this->playerName] = ["region" => $data["country"] ?? "Unknown", "city" => $data['city'] ?? "Unknown"];
         $this->setResult($list);
     }
 
     public function onCompletion(Server $server)
     {
-        Main::getInstance()->displayBroadcast($this->getResult()[$this->playerName], $this->playerName);
+        Main::getInstance()->displayBroadcast($this->getResult()[$this->playerName]['region'], $this->getResult()[$this->playerName]['city'], $this->playerName);
     }
 
 }
