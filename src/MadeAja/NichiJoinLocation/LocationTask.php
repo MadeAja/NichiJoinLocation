@@ -27,6 +27,7 @@ class LocationTask extends AsyncTask
         $data = json_decode($data, true);
         if ($data["message"] === "private range") {
             $data["country"] = "server";
+            $data["city"] = "server";
         }
         $list[$this->playerName] = ["region" => $data["country"] ?? "Unknown", "city" => $data['city'] ?? "Unknown"];
         $this->setResult($list);
