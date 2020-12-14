@@ -4,6 +4,8 @@
  + Showing city and region player
  + No lagging
  
+### 2.0.0
+Fix Private Range Eror
  
 ### How to install
  + Download this plugin
