@@ -4,18 +4,15 @@
 namespace MadeAja\NichiJoinLocation;
 
 use pocketmine\scheduler\AsyncTask;
-use pocketmine\Server;
 use pocketmine\utils\Internet;
 use function json_decode;
 
 class LocationTask extends AsyncTask
 {
 
-    /** @var string */
-    private $playerAddress;
+    private string $playerAddress;
 
-    /** @var string */
-    private $playerName;
+    private string $playerName;
 
     public function __construct($ip, $name)
     {
@@ -23,9 +20,9 @@ class LocationTask extends AsyncTask
         $this->playerName = $name;
     }
 
-    public function onRun()
+    public function onRun() : void
     {
-        $data = Internet::getURL("http://ip-api.com/json/{$this->playerAddress}");
+        $data = Internet::getURL("http://ip-api.com/json/$this->playerAddress")->getBody();
         $data = json_decode($data, true);
         if ($data["message"] === "private range") {
             $data["country"] = "server";
@@ -35,7 +32,7 @@ class LocationTask extends AsyncTask
         $this->setResult($list);
     }
 
-    public function onCompletion(Server $server)
+    public function onCompletion() : void
     {
         Main::getInstance()->displayBroadcast($this->getResult()[$this->playerName]['region'], $this->getResult()[$this->playerName]['city'], $this->playerName);
     }

@@ -11,7 +11,7 @@
 name: NichiJoinLocation
 version: 2.0.0
 main: MadeAja\NichiJoinLocation\Main
-api: 3.0.0
+api: 4.0.0
 author: MadeAja
 website: "https://github.com/MadeAja/NichiJoinLocation"
 description: This plugin is a plugin that can display the player's city
