@@ -9,14 +9,12 @@ use pocketmine\plugin\PluginBase;
 
 class Main extends PluginBase implements Listener
 {
-    /** @var array */
-    public $config;
+    public array $config;
 
-    /** @var self */
-    private static $instance;
+    private static Main $instance;
 
     /** onEnable */
-    public function onEnable()
+    protected function onEnable() : void
     {
         self::$instance = $this;
         $this->saveDefaultConfig();
@@ -32,7 +30,7 @@ class Main extends PluginBase implements Listener
     public function onJoin(PlayerJoinEvent $event)
     {
         $player = $event->getPlayer();
-        $this->getServer()->getAsyncPool()->submitTask(new LocationTask($player->getAddress(), strtolower($player->getName())));
+        $this->getServer()->getAsyncPool()->submitTask(new LocationTask($player->getNetworkSession()->getIp(), strtolower($player->getName())));
         $event->setJoinMessage("");
     }
 
